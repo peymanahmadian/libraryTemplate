@@ -1,0 +1,44 @@
+@import "styles/global";
+.hamburger{
+  color:$color_green;
+  position: absolute;
+  z-index: 9999;
+  top:0;
+  right: 0;
+  @include mobile_size(){
+    margin-top: 2px;
+  }
+  margin-top: 10px;
+  &.open{
+    color:white;
+  }
+}
+.logo{
+  background-color: white;
+  width: 110px;
+  border-radius: 50%;
+  padding: 24px 0;
+  margin: 52px auto 20px;
+  font-size: 11px;
+  text-align: center;
+}
+.side{
+  background-color: $color_green_active;
+  position: absolute;
+  top:0;
+  right: 0;
+  width: 320px;
+  height: 100vh;
+  z-index: 99;
+  transform: translate(350px,0);
+  transition: all 0.2s ease-in;
+  &.open{
+    transform: translate(0,0);
+  }
+}
+.searchContainer{
+  display: none;
+  @include mobile_size(){
+    display: block;
+  }
+}

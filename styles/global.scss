@@ -1,0 +1,71 @@
+//dec
+$max_width:1024px;
+//color
+$color_green:#00aa5e;
+$color_green_hover:#20e18b;
+$color_green_active:#107045;
+//media
+$medium-width:992px;
+@mixin medium_size{
+  @media screen and(max-width:992px){
+    @content;
+  }
+}
+$small-width:1024px;
+@mixin small_size{
+  @media screen and(max-width:1023px){
+    @content;
+  }
+}
+$mobile-width:576px;
+@mixin mobile_size{
+  @media screen and(max-width:576px){
+    @content;
+  }
+}
+//Mixin
+@mixin textbox(){
+  padding: 6px 10px;
+  border-radius: 25px;
+  border: 1px solid #bbb2b2;
+  box-sizing: border-box;
+  box-shadow: 0 0 0;
+  transition: all 0.2s ease-in;
+  &::placeholder{
+    color:$color_green;
+  }
+  &:focus,&:active{
+    -webkit-appearance: none;
+    border:1px solid $color_green;
+    box-shadow:0 0 2px $color_green;
+    outline: none;
+  }
+}
+@mixin button(){
+  padding:8px 12px;
+  border:1px solid $color_green;
+  border-radius: 25px;
+  background-color: $color_green;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+  &:hover{
+    background-color: $color_green_hover;
+    border:1px solid $color_green_hover;
+  }
+ &:active{
+    background-color: $color_green_active;
+    border:1px solid $color_green_active;
+    outline: none;
+  }
+
+
+
+}
+//general
+.btn{
+  @include button();
+  &.block{
+    width: 100%;
+  }
+}

@@ -1,0 +1,31 @@
+@import "styles/global";
+.search{
+  display: flex;
+  input[type="search"]{
+    @include textbox();
+    border-radius:  0 25px 25px 0;
+    flex-grow: 2;
+  }
+  button{
+    @include button();
+    border-radius: 25px 0 0 25px;
+    flex-grow: 1;
+  }
+
+}
+.vertical{
+  display: block;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  input[type="search"]{
+    width: 100%;
+    border-radius: 0 0 0 0;
+    padding:16px 6px;
+  }
+  button{
+    width: 100%;
+    border-radius: 0 0 0 0;
+    padding:16px 6px;
+  }
+}

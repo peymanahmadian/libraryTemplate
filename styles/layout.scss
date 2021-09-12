@@ -1,0 +1,15 @@
+@import "public/assets/fonts/font";
+@import "global.scss";
+body{
+    direction: rtl;
+    margin:0;
+    padding: 0;
+    *{
+
+        font-family: "shabnam";
+    }
+}
+.layout{
+    max-width: $max_width;
+    background-color: red;
+}

@@ -1,0 +1,78 @@
+@import "global.scss";
+.container {
+  display: flex;
+  align-content: space-between;
+  min-height: 55px;
+  max-width: $max_width;
+  margin: 0 auto;
+  padding: 8px;
+  @include mobile_size{
+    min-height: 33px;
+  }
+  &>div{
+    padding: 0 2px;
+    &:first-child{
+      padding-right: 0;
+    }
+    &:last-child{
+      padding-left: 0;
+    }
+  }
+  .side{
+    display: none;
+    @include small_size(){
+      display: block;
+      width: 30%;
+    }
+    @include mobile_size(){
+      display: block;
+      width: 50%;
+
+    }
+  }
+  .logo{
+    text-align: right;
+    color:$color_green;
+    text-align: center;
+    width: 10%;
+    font-size: 12px;
+    @include small_size(){
+      display: none;
+    }
+    @include mobile_size(){
+      display: none;
+    }
+  }
+  .menu{
+    @include small_size(){
+      display: none;
+    }
+    @include mobile_size(){
+      display: none;
+    }
+    width: 50%;
+  }
+  .search{
+    @include small_size(){
+      width: 50%;
+      padding-top: 10px;
+    }
+    @include mobile_size(){
+      display: none;
+    }
+    padding-top: 14px;
+    width:30%;
+  }
+  .profile{
+    padding-top: 14px;
+    width: 10%;
+    @include small_size(){
+      width: 30%;
+      padding-top: 10px;
+    }
+    @include mobile_size(){
+      width: 50%;
+      padding-top: 0;
+    }
+  }
+}
