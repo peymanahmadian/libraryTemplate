@@ -1,0 +1,54 @@
+@import "styles/global";
+.slider{
+    .next_button{
+        position: absolute;
+        right: 0;
+        height: 50px;
+        width: 35px;
+        z-index: 999;
+        border-radius: 6px 0 0 6px;
+        background-color: $color_glass;
+        &>div{
+            overflow: visible !important;
+        }
+        img{
+            height: 28px;
+            text-align: center;
+            transform:translate(6px,11px) rotate(180deg);
+        
+        }
+        &::before{
+            content: "";
+        }
+    }
+    .prev_button{
+        position: absolute;
+        left: 0;
+        height: 50px;
+        width: 35px;
+        z-index: 999;
+        border-radius: 0 6px 6px 0;
+        background-color: $color_glass;
+        &>div{
+            overflow: visible !important;
+        }
+        img{
+            height: 28px;
+            text-align: center;
+            transform:translate(0,11px);
+        
+        }
+        &::before{
+            content: "";
+        }
+    }
+    .item{
+        a{
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: block;
+            height: 100%;
+        }
+        height: 350px;
+    }
+}
