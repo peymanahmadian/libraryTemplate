@@ -7,6 +7,8 @@ $color_glass: rgba(130,144,130,0.58);
 $color_green:#00aa5e;
 $color_green_hover:#20e18b;
 $color_green_active:#107045;
+$color_text:#0c0c0c;
+$color_glass:rgba(124,124,124,0.3);
 //media
 $medium-width:992px;
 @mixin medium_size{
@@ -68,6 +70,11 @@ $mobile-width:576px;
 //general
 .btn{
   @include button();
+  &.white{
+    background-color: white;
+    color:$color_text;
+    border:1px solid white;
+  }
   &.block{
     width: 100%;
   }

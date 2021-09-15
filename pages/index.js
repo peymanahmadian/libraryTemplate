@@ -10,9 +10,16 @@ export default function Home() {
       </Head>
       <section>
         <HeadSlider items={[
-          {name:"مثال",link:"/",author:"پیمان احمدیان",publisher:"احمدیان",image:"http://sanab.erbp.ir/public/files//60fd2fcb544e1646123945.jpg"},
-          {name:"مثال بعدی",link:"/",author:"نعیم احمدیان",publisher:"احمدیان"},
-          {name:"مثال بعدی",link:"/",author:"نعیم احمدیان",publisher:"احمدیان"}
+        {
+            name:"هر گوشی هوشمند یک کتابخانه",
+            image:"/assets/temp/Untitled-1.jpg",
+            caption:<div dir="rtl"><h4>همین حالا برنامه سناب  را  برای گوشی خود دریافت کنید</h4><button className="btn">دریافت برنامه</button></div>
+        },
+        {
+            name:"کمپین هر هفته یک کتاب",
+            image:"/assets/temp/Untitled-2.jpg",
+            caption:<div><button className="btn white">شرکت در کمپین</button></div>
+        },
         ]}/>
       </section>
     </div>
