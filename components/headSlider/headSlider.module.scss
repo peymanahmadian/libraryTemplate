@@ -1,13 +1,26 @@
 @import "styles/global";
 .slider{
+    background-color: $color_green;
+    height: 320px;
+    max-width: $max_width;
+    margin:0 auto;
+    border-radius: 15px;
+    @include small_size(){
+        margin: 0 6px;
+        border-radius: 0;
+
+    }
     .next_button{
         position: absolute;
-        right: 0;
+        right: 2px;
         height: 50px;
         width: 35px;
         z-index: 999;
         border-radius: 6px 0 0 6px;
         background-color: $color_glass;
+        @include mobile_size(){
+            display: none;
+        }
         &>div{
             overflow: visible !important;
         }
@@ -23,12 +36,15 @@
     }
     .prev_button{
         position: absolute;
-        left: 0;
+        left: 2px;
         height: 50px;
         width: 35px;
         z-index: 999;
         border-radius: 0 6px 6px 0;
         background-color: $color_glass;
+        @include mobile_size(){
+            display: none;
+        }
         &>div{
             overflow: visible !important;
         }
@@ -43,12 +59,47 @@
         }
     }
     .item{
+        position: relative;
+        border-radius: 15px;
+        @include small_size(){
+            border-radius: 0;
+        }
         a{
+            border-radius: 15px;
+            @include small_size(){
+                border-radius: 0;
+            }
             background-repeat: no-repeat;
             background-size: cover;
+            background-position:0 center;
+            @include mobile_size(){
+                background-image: none !important;
+            }
             display: block;
             height: 100%;
         }
-        height: 350px;
+        height: 320px;
+    }
+    @mixin text_position(){
+        position: absolute;
+        right: 8%;
+
+        color: white;
+        text-shadow: 0 0 4px $color_text;
+        padding: 6px 10px;
+        border-radius: 4px;
+        @include mobile_size(){
+            right: 2px;
+        }
+    }
+    .book_name{
+        font-size: 2pc;
+        font-weight: 800;
+        top: 30px;
+        @include text_position();
+    }
+    .caption{
+        bottom:50px;
+        @include text_position();
     }
 }

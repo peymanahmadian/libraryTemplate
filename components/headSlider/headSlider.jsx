@@ -33,14 +33,18 @@ const HeadSlider=(props)=>{
     return(
     <Slider className={styles.slider} {...setting}>
         {props.items.map(item=>
-        <article className={styles.item}>
-            <Link href={item.link}>
+        <article key={item.name} className={styles.item}>
                 <a  style={{backgroundImage:`url(${item.image})`}}>
-                    <div>{item.name}</div>
-                    <div>{item.author}</div>
-                    <div>{item.publisher}</div>
-                </a>
-            </Link>
+
+                    <div className={styles.book_name}>{item.name}</div>
+        {
+            item.caption && <div className={styles.caption}>{item.caption}</div> 
+            
+
+        }
+
+                    
+        </a>
         </article>)}
     </Slider>
     )
