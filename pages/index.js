@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import {HeadSlider} from "../components";
+import {BookSlider, HeadSlider} from "../components";
 export default function Home() {
   return (
     <div>
@@ -21,6 +21,40 @@ export default function Home() {
             caption:<div><button className="btn white">شرکت در کمپین</button></div>
         },
         ]}/>
+      <BookSlider
+          items={[
+              {
+                  name:"مغازه خودکشی",
+                  image:"http://sanab.erbp.ir/public/files/60fd2fcb544e1646123945.jpg",
+                  link:"/"
+              },
+              {
+                  name:"مغازه خودکشی",
+                  image:"http://sanab.erbp.ir/public/files/60fd2fcb544e1646123945.jpg",
+                  link:"/"
+              },
+              {
+                  name:"مغازه خودکشی",
+                  image:"http://sanab.erbp.ir/public/files/60fd2fcb544e1646123945.jpg",
+                  link:"/"
+              },
+              {
+                  name:"مغازه خودکشی",
+                  image:"http://sanab.erbp.ir/public/files/60fd2fcb544e1646123945.jpg",
+                  link:"/"
+              },
+              {
+                  name:"مغازه خودکشی",
+                  image:"http://sanab.erbp.ir/public/files/60fd2fcb544e1646123945.jpg",
+                  link:"/"
+              },
+              {
+                  name:"مغازه خودکشی",
+                  image:"http://sanab.erbp.ir/public/files/60fd2fcb544e1646123945.jpg",
+                  link:"/"
+              },
+          ]}
+      />
       </section>
     </div>
   )

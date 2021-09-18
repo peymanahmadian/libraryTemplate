@@ -1,8 +1,9 @@
 import Slider from "react-slick";
-import Image from 'next/image';
-import arrow from "../../public/assets/img/arrow.svg";
-import styles from "./headSlider.module.scss";
-const HeadSlider=(props)=>{
+import styles from "./bookSlider.module.scss";
+import arrow from "../../public/assets/img/arrow_black.svg";
+import Image from "next/image";
+import {Book} from "./../../components";
+const BookSlider=(props)=>{
     const NextArrowBtn=(props)=>{
         const {className,style,onClick}=props;
         return(
@@ -23,29 +24,15 @@ const HeadSlider=(props)=>{
         dots: false,
         infinite: true,
         speed: 500,
-        slidesToShow: 1,
+        slidesToShow: 5,
         slidesToScroll: 1,
         nextArrow:<NextArrowBtn/>,
         prevArrow:<PrevArrowBtn/>
     }
-
     return(
-    <Slider className={styles.slider} {...setting}>
-        {props.items.map(item=>
-        <article key={item.name} className={styles.item}>
-                <a  style={{backgroundImage:`url(${item.image})`}}>
-
-                    <div className={styles.book_name}>{item.name}</div>
-        {
-            item.caption && <div className={styles.caption}>{item.caption}</div> 
-            
-
-        }
-
-                    
-        </a>
-        </article>)}
-    </Slider>
+        <Slider className={styles.slider} {...setting}>
+            {props.items.map(item=><Book key={item.link} name={item.name} image={item.image} link={item.link}/>)}
+        </Slider>
     )
 }
-export default HeadSlider;
+export default BookSlider;
