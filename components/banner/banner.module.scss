@@ -1,0 +1,9 @@
+@import "styles/global";
+.Banner{
+    max-width:$max_width;
+    background-size: cover;
+    height: 250px;
+    margin:12px auto;
+    border-radius: 8px;
+    cursor: pointer;
+}

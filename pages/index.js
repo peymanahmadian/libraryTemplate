@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import {BookSlider, HeadSlider} from "../components";
+import {BookSlider, HeadSlider,Banner} from "../components";
 export default function Home() {
   return (
     <div>
@@ -22,6 +22,43 @@ export default function Home() {
         },
         ]}/>
       <BookSlider
+          title={"تازه های فرهنگی"}
+          items={[
+              {
+                  name:"مغازه خودکشی",
+                  image:"http://sanab.erbp.ir/public/files/60fd2fcb544e1646123945.jpg",
+                  link:"/"
+              },
+              {
+                  name:"مغازه خودکشی",
+                  image:"http://sanab.erbp.ir/public/files/60fd2fcb544e1646123945.jpg",
+                  link:"/"
+              },
+              {
+                  name:"مغازه خودکشی",
+                  image:"http://sanab.erbp.ir/public/files/60fd2fcb544e1646123945.jpg",
+                  link:"/"
+              },
+              {
+                  name:"مغازه خودکشی",
+                  image:"http://sanab.erbp.ir/public/files/60fd2fcb544e1646123945.jpg",
+                  link:"/"
+              },
+              {
+                  name:"مغازه خودکشی",
+                  image:"http://sanab.erbp.ir/public/files/60fd2fcb544e1646123945.jpg",
+                  link:"/"
+              },
+              {
+                  name:"مغازه خودکشی",
+                  image:"http://sanab.erbp.ir/public/files/60fd2fcb544e1646123945.jpg",
+                  link:"/"
+              },
+          ]}
+      />
+      <Banner link="/" image="http://sanab.erbp.ir/public/files//60fd3424556d8456406714.jpg"/>
+      <BookSlider
+          title={"تازه های هنری"}
           items={[
               {
                   name:"مغازه خودکشی",
