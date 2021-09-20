@@ -1,8 +1,15 @@
 @import "styles/global";
 .menu{
+  @include mobile_size(){
+    display: block;
+
+  }
   list-style: none;
   display: flex;
   li{
+    @include mobile_size(){
+      padding: 10px 6px;
+    }
     text-align: center;
     padding: 2px 6px;
     margin: 0 4px;

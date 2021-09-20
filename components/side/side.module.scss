@@ -2,7 +2,7 @@
 .hamburger{
   color:$color_green;
   position: fixed;
-  z-index: 9999;
+  z-index: 99999;
   top:0;
   right: 0;
   @include mobile_size(){
@@ -29,7 +29,7 @@
   right: 0;
   width: 320px;
   height: 100vh;
-  z-index: 99;
+  z-index: 9999;
   transform: translate(350px,0);
   transition: all 0.2s ease-in;
   &.open{

@@ -3,6 +3,10 @@
     background-color: $color_gray;
     position: relative;
     min-height: 250px;
+    @include mobile_size(){
+        min-height: 100%;
+        padding-bottom: 80px;
+    }
     margin-top: 20px;
     .container{
         max-width:$max_width ;
