@@ -3,7 +3,9 @@ import Link from "next/link";
 const Banner=(props)=>{
     return(
         <Link href={props.link}>
-            <div style={{backgroundImage:`url(${props.image})`}} className={styles.Banner}/>
+            <a>
+                <div style={{backgroundImage:`url(${props.image})`}} className={styles.Banner}/>
+            </a>
         </Link>
     )
 }

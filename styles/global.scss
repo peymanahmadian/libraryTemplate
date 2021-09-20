@@ -4,21 +4,22 @@
 $max_width:1024px;
 //color
 $color_glass: rgba(130,144,130,0.58);
+$color_gray:#e4e4e4;
 $color_green:#00aa5e;
 $color_green_hover:#20e18b;
 $color_green_active:#107045;
 $color_text:#0c0c0c;
 $color_glass:rgba(124,124,124,0.3);
 //media
-$medium-width:992px;
+$medium-width:1023px;
 @mixin medium_size{
-  @media screen and(max-width:992px){
+  @media screen and(max-width:1023px){
     @content;
   }
 }
-$small-width:1024px;
+$small-width:992px;
 @mixin small_size{
-  @media screen and(max-width:1023px){
+  @media screen and(max-width:992px){
     @content;
   }
 }

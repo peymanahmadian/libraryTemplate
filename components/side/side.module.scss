@@ -1,7 +1,7 @@
 @import "styles/global";
 .hamburger{
   color:$color_green;
-  position: absolute;
+  position: fixed;
   z-index: 9999;
   top:0;
   right: 0;
@@ -24,7 +24,7 @@
 }
 .side{
   background-color: $color_green_active;
-  position: absolute;
+  position: fixed;
   top:0;
   right: 0;
   width: 320px;
