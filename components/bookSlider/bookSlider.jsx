@@ -29,7 +29,27 @@ const BookSlider=(props)=>{
         slidesToShow: 5,
         slidesToScroll: 5,
         nextArrow:<NextArrowBtn/>,
-        prevArrow:<PrevArrowBtn/>
+        prevArrow:<PrevArrowBtn/>,
+        responsive: [
+            {
+                breakpoint: 576,
+                settings:{
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                }
+            },
+            {
+                breakpoint: 992,
+                settings:{
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                }
+            },
+            {
+                breakpoint: 1023,
+                settings:{}
+            }
+        ]
     }
     return(
         <div className={styles.sliderContainer}>
