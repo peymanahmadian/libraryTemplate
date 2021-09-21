@@ -92,6 +92,42 @@ export default function Home() {
               },
           ]}
       />
+      <Banner link="/books/12" image="http://sanab.erbp.ir/public/files//60fd3424556d8456406714.jpg"/>
+          <BookSlider
+              title={"تازه های ورزشی"}
+              items={[
+                  {
+                      name:"مغازه خودکشی",
+                      image:"http://sanab.erbp.ir/public/files/60fd2fcb544e1646123945.jpg",
+                      link:"/"
+                  },
+                  {
+                      name:"مغازه خودکشی",
+                      image:"http://sanab.erbp.ir/public/files/60fd2fcb544e1646123945.jpg",
+                      link:"/"
+                  },
+                  {
+                      name:"مغازه خودکشی",
+                      image:"http://sanab.erbp.ir/public/files/60fd2fcb544e1646123945.jpg",
+                      link:"/"
+                  },
+                  {
+                      name:"مغازه خودکشی",
+                      image:"http://sanab.erbp.ir/public/files/60fd2fcb544e1646123945.jpg",
+                      link:"/"
+                  },
+                  {
+                      name:"مغازه خودکشی",
+                      image:"http://sanab.erbp.ir/public/files/60fd2fcb544e1646123945.jpg",
+                      link:"/"
+                  },
+                  {
+                      name:"مغازه خودکشی",
+                      image:"http://sanab.erbp.ir/public/files/60fd2fcb544e1646123945.jpg",
+                      link:"/"
+                  },
+              ]}
+          />
       </section>
     </div>
   )

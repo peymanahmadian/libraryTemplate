@@ -5,11 +5,13 @@ $max_width:1024px;
 //color
 $color_glass: rgba(130,144,130,0.58);
 $color_gray:#e4e4e4;
+$color_gray_light:#e4e4e457;
 $color_green:#00aa5e;
 $color_green_hover:#20e18b;
 $color_green_active:#107045;
 $color_text:#0c0c0c;
 $color_glass:rgba(124,124,124,0.3);
+
 //media
 $medium-width:1023px;
 @mixin medium_size{
@@ -69,6 +71,9 @@ $mobile-width:576px;
 
 }
 //general
+.block{
+  width: 100%;
+}
 .btn{
   @include button();
   &.white{
@@ -76,7 +81,13 @@ $mobile-width:576px;
     color:$color_text;
     border:1px solid white;
   }
-  &.block{
-    width: 100%;
+
+}
+//overide
+.text{
+  @include textbox();
+  border-radius: 6px;
+  &::placeholder{
+    color:gray;
   }
 }
