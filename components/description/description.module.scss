@@ -1,0 +1,25 @@
+.content{
+  text-align: justify;
+  padding: 6px 16px 20px;
+  border-radius: 6px;
+  background-color: #f3f3f3;
+  max-height: 120px;
+  overflow-y: hidden;
+  transition: all 0.2s ease-in;
+  &.hover{
+    max-height: 100%;
+    overflow-y: visible;
+  }
+}
+.footer{
+  text-align: center;
+  width: 100%;
+  position: relative;
+  height: 15px;
+  button{
+    top:-15px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50px);
+  }
+}

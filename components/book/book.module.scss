@@ -18,11 +18,12 @@
       border-radius: 6px;
     }
   }
-  .text{
+  .caption{
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
     color:$color_text;
+
   }
 }

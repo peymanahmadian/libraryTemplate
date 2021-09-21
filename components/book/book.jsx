@@ -11,7 +11,7 @@ const Book=(props)=>{
                 <div className={styles.cover}>
                     <Image alt={props.name} width={160} height={190} src={props.image}/>
                 </div>
-                <div className={styles.text}>{props.name}</div>
+                <div className={styles.caption}>{props.name}</div>
             </a>
         </Link>
     )

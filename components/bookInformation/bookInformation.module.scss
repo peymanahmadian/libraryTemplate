@@ -1,0 +1,49 @@
+@import "global.scss";
+.stage{
+  max-width: $max_width;
+  margin:6px auto;
+
+  padding: 8px;
+  .bookInfoContainer{
+    margin-bottom: 8px;
+    img{
+      border-radius: 8px;
+    }
+
+    display: flex;
+    .bookPicture{
+      width: 25%;
+      &>div{
+        box-shadow: 0 0 9px #6b6b6b;
+        border-radius: 6px;
+      }
+    }
+    .bookInformation{
+      background-color: #e4e4e457;
+      border-radius: 6px;
+      width: 50%;
+      padding: 8px 20px 10px ;
+      font-size: 14px;
+      line-height: 28px;
+      .title{
+        padding-bottom: 12px;
+        font-weight: 600;
+        font-size: 18px;
+      }
+    }
+    .bookDownload{
+      padding: 0 6px;
+      width: 25%;
+      div{
+        padding-bottom: 6px;
+      }
+    }
+
+  }
+  .bookAudio{
+    audio{
+      width: 100%;
+    }
+
+  }
+}
