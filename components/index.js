@@ -8,3 +8,4 @@ export {default as Banner} from "./banner/banner";
 export {default as BookInformation} from "./bookInformation/bookInformation";
 export {default as Description} from "./description/description";
 export {default as Comments} from "./comments/comments";
+export {default as BookList} from "./bookList/bookList";

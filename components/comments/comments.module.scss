@@ -1,5 +1,9 @@
 @import "global.scss";
 .commentContainer{
+  @include mobile_size(){
+    box-sizing: border-box;
+    padding: 12px 6px;
+  }
     max-width: $max_width;
     margin:0 auto;
   .insertComment{
@@ -10,6 +14,7 @@
 
   }
   .showComment{
+
     .avatar{
       display: flex;
       margin-right: 8px;

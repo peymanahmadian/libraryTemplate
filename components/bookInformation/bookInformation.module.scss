@@ -11,14 +11,32 @@
     }
 
     display: flex;
+    @include mobile_size(){
+      display: block;
+    }
     .bookPicture{
       width: 25%;
+      @include mobile_size(){
+        width: 100%;
+        text-align: center;
+      }
       &>div{
         box-shadow: 0 0 9px #6b6b6b;
         border-radius: 6px;
       }
     }
     .bookInformation{
+      @include mobile_size(){
+        background-color: #e4e4e457;
+        border-radius: 6px;
+        width: 100%;
+        padding: 8px 20px 10px;
+        box-sizing: border-box;
+        box-shadow: 0 0 2px grey;
+        margin: 6px 2px 12px;
+        font-size: 1.2em;
+        line-height: 36px;
+      }
       background-color: #e4e4e457;
       border-radius: 6px;
       width: 50%;
@@ -34,6 +52,9 @@
     .bookDownload{
       padding: 0 6px;
       width: 25%;
+      @include mobile_size(){
+        width: 100%;
+      }
       div{
         padding-bottom: 6px;
       }
