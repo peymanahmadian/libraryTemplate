@@ -13,3 +13,16 @@ body{
     max-width: $max_width;
     margin: 0 auto;
 }
+.row{
+    display: flex;
+
+}
+.col{
+    width: 100%;
+    &.m_20{
+        width: 20%;
+    }
+    &.m_80{
+        width: 80%;
+    }
+}

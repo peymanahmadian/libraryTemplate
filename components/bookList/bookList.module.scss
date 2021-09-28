@@ -1,6 +1,7 @@
 .bookList{
   display: flex;
+  flex-wrap: wrap;
   .item{
-
+    margin: 0 18px;
   }
 }

@@ -24,6 +24,10 @@
     left: 50%;
     transform: translateX(-50%);
     color:$color_text;
-
+    height: 20px;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 }

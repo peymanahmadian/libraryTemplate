@@ -1,0 +1,21 @@
+@import "global.scss";
+.pagination{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  .button{
+    padding: 4px;
+    cursor: pointer;
+    height: 38px;
+    width:38px;
+    margin: 0 4px;
+    border-radius: 25px;
+    border: 0;
+    background-color:$color_gray_light;
+    transition: all 0.2s ease-in;
+    &:hover{
+      background-color: $color_green;
+      color:white;
+    }
+  }
+}
