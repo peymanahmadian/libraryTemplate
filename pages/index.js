@@ -7,6 +7,7 @@ export default function Home() {
     const [culturalSlider,setCulturalSlider]=useState([]);
     const [artisticSlider,setArtisticSlider]=useState([]);
     const [humorousSlider,setHumorousSlider]=useState([]);
+    const [bannerList,setBannerList]=useState([]);
     useEffect(()=>{
         service("get","books",{page:1,pagination:true,"categories.title":"فرهنگی","_order[createdAt]":"asc"}).then(data=>{
             let cash=data["hydra:member"].map(item=>({name:item.name,image:`http://sanab.erbp.ir/public/files/${item.image.url}`,link:`/books/${item.id}`}));
@@ -19,6 +20,10 @@ export default function Home() {
         service("get","books",{page:1,pagination:true,"categories.title":"طنز","_order[createdAt]":"asc"}).then(data=>{
             let cash=data["hydra:member"].map(item=>({name:item.name,image:`http://sanab.erbp.ir/public/files/${item.image.url}`,link:`/books/${item.id}`}));
             setHumorousSlider(cash);
+        });
+        service("get","banners",{}).then(data=>{
+            let cash=data["hydra:member"].map(item=>({link:item.targetLink,image:`http://sanab.erbp.ir/public/files/${item.file.title}`}));
+            setBannerList(cash);
         })
     },[]);
   return (
@@ -41,16 +46,22 @@ export default function Home() {
             caption:<div><button className="btn white">شرکت در کمپین</button></div>
         },
         ]}/>
-      <BookSlider
-          title={"تازه های فرهنگی"}
-          items={culturalSlider}
-      />
-      <Banner link="/" image="http://sanab.erbp.ir/public/files//60fd3424556d8456406714.jpg"/>
-      <BookSlider
-          title={"تازه های هنری"}
-            items={artisticSlider}
-      />
-      <Banner link="/books/12" image="http://sanab.erbp.ir/public/files//60fd3424556d8456406714.jpg"/>
+          <BookSlider
+              title={"تازه های فرهنگی"}
+              items={culturalSlider}
+          />
+          {
+              bannerList.length > 0 &&
+              <Banner link={bannerList[0].link} image={bannerList[0].image}/>
+          }
+          <BookSlider
+              title={"تازه های هنری"}
+                items={artisticSlider}
+          />
+          {
+              bannerList.length > 1 &&
+              <Banner link={bannerList[0].link} image={bannerList[0].image}/>
+          }
           <BookSlider
               title={"تازه های طنز"}
                 items={humorousSlider}

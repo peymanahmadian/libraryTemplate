@@ -57,9 +57,19 @@ const BookSlider=(props)=>{
                 <Image src={icon} height={32} width={32} alt={props.title}/> 
                 <div>{props.title}</div>
             </div>
-            <Slider className={styles.slider} {...setting}>
-                {props.items.map(item=><Book key={item.link} name={item.name} image={item.image} link={item.link}/>)}
-            </Slider>
+            {
+                props.items.length ?
+
+                    <Slider className={styles.slider} {...setting}>
+                        {
+                            props.items.map(item=><Book key={item.link} name={item.name} image={item.image} link={item.link}/>)
+                        }
+                    </Slider>
+                    :
+                    <div className={"loading"}>در حال بارگذاری ...</div>
+            }
+
+
         </div>
 
     )
