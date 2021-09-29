@@ -1,6 +1,26 @@
 import Head from 'next/head';
 import {BookSlider, HeadSlider,Banner} from "../components";
+import {useEffect, useState} from "react";
+import {useService} from "./../hooks";
 export default function Home() {
+    const service=useService();
+    const [culturalSlider,setCulturalSlider]=useState([]);
+    const [artisticSlider,setArtisticSlider]=useState([]);
+    const [humorousSlider,setHumorousSlider]=useState([]);
+    useEffect(()=>{
+        service("get","books",{page:1,pagination:true,"categories.title":"فرهنگی","_order[createdAt]":"asc"}).then(data=>{
+            let cash=data["hydra:member"].map(item=>({name:item.name,image:`http://sanab.erbp.ir/public/files/${item.image.url}`,link:`/books/${item.id}`}));
+            setCulturalSlider(cash);
+        });
+        service("get","books",{page:1,pagination:true,"categories.title":"هنری","_order[createdAt]":"asc"}).then(data=>{
+            let cash=data["hydra:member"].map(item=>({name:item.name,image:`http://sanab.erbp.ir/public/files/${item.image.url}`,link:`/books/${item.id}`}));
+            setArtisticSlider(cash);
+        });
+        service("get","books",{page:1,pagination:true,"categories.title":"طنز","_order[createdAt]":"asc"}).then(data=>{
+            let cash=data["hydra:member"].map(item=>({name:item.name,image:`http://sanab.erbp.ir/public/files/${item.image.url}`,link:`/books/${item.id}`}));
+            setHumorousSlider(cash);
+        })
+    },[]);
   return (
     <div>
       <Head>
@@ -23,110 +43,17 @@ export default function Home() {
         ]}/>
       <BookSlider
           title={"تازه های فرهنگی"}
-          items={[
-              {
-                  name:"مغازه خودکشی",
-                  image:"http://sanab.erbp.ir/public/files/60fd2fcb544e1646123945.jpg",
-                  link:"/"
-              },
-              {
-                  name:"مغازه خودکشی",
-                  image:"http://sanab.erbp.ir/public/files/60fd2fcb544e1646123945.jpg",
-                  link:"/"
-              },
-              {
-                  name:"مغازه خودکشی",
-                  image:"http://sanab.erbp.ir/public/files/60fd2fcb544e1646123945.jpg",
-                  link:"/"
-              },
-              {
-                  name:"مغازه خودکشی",
-                  image:"http://sanab.erbp.ir/public/files/60fd2fcb544e1646123945.jpg",
-                  link:"/"
-              },
-              {
-                  name:"مغازه خودکشی",
-                  image:"http://sanab.erbp.ir/public/files/60fd2fcb544e1646123945.jpg",
-                  link:"/"
-              },
-              {
-                  name:"مغازه خودکشی",
-                  image:"http://sanab.erbp.ir/public/files/60fd2fcb544e1646123945.jpg",
-                  link:"/"
-              },
-          ]}
+          items={culturalSlider}
       />
       <Banner link="/" image="http://sanab.erbp.ir/public/files//60fd3424556d8456406714.jpg"/>
       <BookSlider
           title={"تازه های هنری"}
-          items={[
-              {
-                  name:"مغازه خودکشی",
-                  image:"http://sanab.erbp.ir/public/files/60fd2fcb544e1646123945.jpg",
-                  link:"/"
-              },
-              {
-                  name:"مغازه خودکشی",
-                  image:"http://sanab.erbp.ir/public/files/60fd2fcb544e1646123945.jpg",
-                  link:"/"
-              },
-              {
-                  name:"مغازه خودکشی",
-                  image:"http://sanab.erbp.ir/public/files/60fd2fcb544e1646123945.jpg",
-                  link:"/"
-              },
-              {
-                  name:"مغازه خودکشی",
-                  image:"http://sanab.erbp.ir/public/files/60fd2fcb544e1646123945.jpg",
-                  link:"/"
-              },
-              {
-                  name:"مغازه خودکشی",
-                  image:"http://sanab.erbp.ir/public/files/60fd2fcb544e1646123945.jpg",
-                  link:"/"
-              },
-              {
-                  name:"مغازه خودکشی",
-                  image:"http://sanab.erbp.ir/public/files/60fd2fcb544e1646123945.jpg",
-                  link:"/"
-              },
-          ]}
+            items={artisticSlider}
       />
       <Banner link="/books/12" image="http://sanab.erbp.ir/public/files//60fd3424556d8456406714.jpg"/>
           <BookSlider
-              title={"تازه های ورزشی"}
-              items={[
-                  {
-                      name:"مغازه خودکشی",
-                      image:"http://sanab.erbp.ir/public/files/60fd2fcb544e1646123945.jpg",
-                      link:"/"
-                  },
-                  {
-                      name:"مغازه خودکشی",
-                      image:"http://sanab.erbp.ir/public/files/60fd2fcb544e1646123945.jpg",
-                      link:"/"
-                  },
-                  {
-                      name:"مغازه خودکشی",
-                      image:"http://sanab.erbp.ir/public/files/60fd2fcb544e1646123945.jpg",
-                      link:"/"
-                  },
-                  {
-                      name:"مغازه خودکشی",
-                      image:"http://sanab.erbp.ir/public/files/60fd2fcb544e1646123945.jpg",
-                      link:"/"
-                  },
-                  {
-                      name:"مغازه خودکشی",
-                      image:"http://sanab.erbp.ir/public/files/60fd2fcb544e1646123945.jpg",
-                      link:"/"
-                  },
-                  {
-                      name:"مغازه خودکشی",
-                      image:"http://sanab.erbp.ir/public/files/60fd2fcb544e1646123945.jpg",
-                      link:"/"
-                  },
-              ]}
+              title={"تازه های طنز"}
+                items={humorousSlider}
           />
       </section>
     </div>

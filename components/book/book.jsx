@@ -5,7 +5,7 @@ import cover from "./book.png";
 const Book=(props)=>{
     return(
         <Link
-            href="/"
+            href={props.link}
         >
             <a className={styles.book}>
                 <div className={styles.cover}>
