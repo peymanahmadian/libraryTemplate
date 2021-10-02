@@ -10,3 +10,4 @@ export {default as Description} from "./description/description";
 export {default as Comments} from "./comments/comments";
 export {default as BookList} from "./bookList/bookList";
 export {default as Pagination} from "./pagination/pagination";
+export {default as Filter} from "./filter/filter";
