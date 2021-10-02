@@ -13,6 +13,9 @@
     border: 0;
     background-color:$color_gray_light;
     transition: all 0.2s ease-in;
+    &.active{
+      background-color: $color_green;
+    }
     &:hover{
       background-color: $color_green;
       color:white;

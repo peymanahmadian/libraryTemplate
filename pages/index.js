@@ -1,9 +1,11 @@
 import Head from 'next/head';
 import {BookSlider, HeadSlider,Banner} from "../components";
 import {useEffect, useState} from "react";
-import {useService} from "./../hooks";
+import {useService,useUrl} from "./../hooks";
+import {QueryString,BookType} from "./../models/eums";
 export default function Home() {
     const service=useService();
+    const url=useUrl();
     const [culturalSlider,setCulturalSlider]=useState([]);
     const [artisticSlider,setArtisticSlider]=useState([]);
     const [humorousSlider,setHumorousSlider]=useState([]);
