@@ -11,3 +11,4 @@ export {default as Comments} from "./comments/comments";
 export {default as BookList} from "./bookList/bookList";
 export {default as Pagination} from "./pagination/pagination";
 export {default as Filter} from "./filter/filter";
+export {default as MultiSelect} from "./multiSelect/multiSelect";

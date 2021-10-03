@@ -2,7 +2,7 @@ import Head from 'next/head';
 import {BookSlider, HeadSlider,Banner} from "../components";
 import {useEffect, useState} from "react";
 import {useService,useUrl} from "./../hooks";
-import {QueryString,BookType} from "./../models/eums";
+import {MultiSelect} from "../components"
 export default function Home() {
     const service=useService();
     const url=useUrl();
@@ -36,6 +36,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <section>
+          {/*<MultiSelect type={"radio"} onChange={(e)=>{debugger}} name={"peyman"}*/}
+          {/*             item={[*/}
+          {/*                 {value:1,label:"شماره یک"},*/}
+          {/*                  {value:2,label:"شماره دو"}*/}
+          {/*             ]}*/}
+          {/*/>*/}
         <HeadSlider items={[
         {
             name:"هر گوشی هوشمند یک کتابخانه",

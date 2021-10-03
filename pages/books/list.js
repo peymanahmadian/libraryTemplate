@@ -1,6 +1,6 @@
 import {useEffect,useState} from "react";
 import {useRouter} from "next/router";
-import {BookList,Pagination} from "../../components";
+import {BookList,Pagination,Filter} from "../../components";
 import {useService,useUrl} from "../../hooks";
 const List=(props)=>{
     const router=useRouter();
@@ -27,7 +27,7 @@ const List=(props)=>{
     return(
         <div className={"layout"}>
             <div className={"row"}>
-                <div className={"col m_20"}>filter</div>
+                <div className={"col m_20"}><Filter inputs={[{type:"textbox",name:"sample"}]} /></div>
                 <div className={"col m_80"}>
                     {
                         query && list ?

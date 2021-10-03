@@ -1,22 +1,21 @@
 import {useState} from "react";
+import {MultiSelect} from "../../components";
 const Filter=(props)=>{
     const [filter,setFilter]=useState({});
     return(<div>
+        sample filter
         <div>
             {
-                props.inputs.map(inputs=>{(<div>
+                props.inputs.map(input=>{
+                    (<div>
                     {
-                        input.type==="textbox" &&
-                        <input type="text" name={item.name} onChange={e=>setFilter({...filter,[item.name]:e.target.value})}/>
+                        (input.type==="textbox") && <input type="text" name={input.name} onChange={e=>setFilter({...filter,[input.name]:e.target.value})}/>
                     }
                     {
-                        input.type==="multiCheck" &&
-                        <div>
-                            {input.items.map(<checkbox name={input.name}>{item.label}</checkbox>)}
-                            {/* @create multi select component */}
-                        </div>
+                        (input.type==="multiCheck") && <MultiSelect type={"checkbox"} name={input.name} item={input.items} onChange={e=>setFilter({...filter,[input.name]:e})}/>
                     }
-                </div>)})
+                    </div>)
+                })
             }
         </div>
     </div>)
