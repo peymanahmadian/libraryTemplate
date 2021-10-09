@@ -7,7 +7,6 @@ const MultiSelect=(props)=>{
         }
     }, [values]);
     const onChange=(e)=>{
-        debugger;
         if(props.type==="radio"){
             props.onChange(e.target.value);
         }else{
@@ -24,7 +23,7 @@ const MultiSelect=(props)=>{
     }
     return(
         <div>
-            {props.item.map(items=><><input type={props.type} onChange={onChange} key={items.value} name={props.name} value={items.value}/><label>{items.label}</label></>)}
+            {props.item.map(items=><div><input type={props.type} onChange={onChange} key={items.value} name={props.name} value={items.value}/><label>{items.label}</label></div>)}
         </div>
     )
 

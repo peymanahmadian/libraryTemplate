@@ -1,0 +1,22 @@
+@import "global.scss";
+.filter{
+  padding: 0 8px 10px;
+  border:1px solid $color_gray;
+  border-radius: 6px 6px 0 0;
+  .mainTitle{
+    margin: 0 -8px;
+    text-align: center;
+    background-color: $color_green;
+    color:white;
+    border-radius: 6px 6px 0 0;
+    padding: 8px;
+    margin-bottom: 6px;
+  }
+  .title{
+    padding: 4px 6px;
+    margin: 4px 0;
+    font-weight: 600;
+    border-radius: 4px;
+  }
+  font-size: 14px;
+}
