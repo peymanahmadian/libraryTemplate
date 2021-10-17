@@ -5,13 +5,17 @@
   .title{
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: flex-start;
     max-width: 160px;
     border-radius: 28px;
     padding: 4px 9px;
     margin-top: 13px;
     font-weight: 600;
     color:$color_text;
+    min-width: 350px;
+    div:first-child{
+      margin-left: 6px;
+    };
     //border:1px solid $color_green;
   }
   .slider{
@@ -41,7 +45,6 @@
         height: 24px;
         text-align: center;
         transform: rotate(180deg);
-  
       }
       &::before{
         content: "";

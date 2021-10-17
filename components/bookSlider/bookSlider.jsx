@@ -52,7 +52,7 @@ const BookSlider=(props)=>{
         ]
     }
     return(
-        <div className={styles.sliderContainer}>
+        <div className={styles.sliderContainer} id={props.id}>
             <div className={styles.title}>
                 <Image src={icon} height={32} width={32} alt={props.title}/> 
                 <div>{props.title}</div>
