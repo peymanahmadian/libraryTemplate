@@ -31,9 +31,13 @@ const BookInformation=(props)=>{
         </div>
 
     </div>
-    <div className={styles.bookAudio}>
-        <audio controls src={props.audio}/>
-    </div>
+            {
+                props.audio &&
+                <div className={styles.bookAudio}>
+                    <audio controls src={props.audio}/>
+                </div>
+            }
+
     <div>
         <Description>
             {props.description}
