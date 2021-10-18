@@ -1,0 +1,13 @@
+.pdfContainer{
+    margin: 0 auto;
+    width: 620px;
+    box-shadow:0 0 4px gray;
+    padding: 4px;
+    .pageContainer{
+        text-align: center;
+        button{
+            border:0;
+            padding: 12px;
+        }
+    }
+}

@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+
     "axios": "0.21.4",
     "hamburger-react": "2.4.1",
     "html-react-parser": "^1.3.0",
@@ -17,11 +18,16 @@
     "query-string": "7.0.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-reader": "^0.20.4",
     "react-slick": "0.28.1",
-    "sass": "1.39.0"
+    "sass": "1.39.0",
+    "epubjs": "0.3.88",
+    "next-transpile-modules": "8.0.0",
+    "react-pdf": "5.4.0"
   },
   "devDependencies": {
     "eslint": "7.32.0",
-    "eslint-config-next": "11.1.2"
+    "eslint-config-next": "11.1.2",
+    "file-loader": "^6.2.0"
   }
 }
