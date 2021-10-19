@@ -32,3 +32,22 @@ body{
     background-color: $color_gray_light;
     line-height: 238px;
 }
+.pageView{
+    top:16px;
+    position: relative;
+    box-shadow:0 0 4px gray;
+    margin: 8px;
+    border-radius: 4px;
+    .title{
+        position: absolute;
+        top: -20px;
+        right: 8px;
+        z-index: 999;
+        background-color: $color_green;
+        max-width: 180px;
+        text-align: center;
+        padding: 8px 12px;
+        color:white;
+        border-radius: 25px;
+    }
+}

@@ -1,7 +1,18 @@
+import {useState,useEffect} from "react";
 import Image from "next/image";
 import styles from "./bookInformation.module.scss";
 import {Description} from "./../../components";
+import {useUrl} from "../../hooks";
+
 const BookInformation=(props)=>{
+    const url=useUrl("/view")
+    const [linkInfo,setLinkInfo]=useState(null);
+    useEffect(() => {
+        let extension=props.file.title.split(".")[1];
+        let name=props.name;
+        let file=props.file.title;
+        setLinkInfo({extension,name,file});
+    }, [props.file]);
 
     return(
         <div className={styles.stage}>
@@ -22,7 +33,7 @@ const BookInformation=(props)=>{
         </div>
         <div className={styles.bookDownload}>
             <div>
-                <button type={"button"} className={"btn block"}>دانلود متن کتاب</button>
+                <button onClick={()=>url(linkInfo)}  type={"button"} className={"btn block"}>مطالعه کتاب</button>
             </div>
             <div>
                 <button type={"button"} className={"btn block"}>دانلود صوت کتاب</button>

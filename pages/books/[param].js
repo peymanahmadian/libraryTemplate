@@ -59,6 +59,7 @@ const Books=(props)=>{
                 date={moment(bookInfo.createdAt,"YYYY/MM/DD").format("jYYYY/jMM/jDD")}
                 description={bookInfo.description}
                 audio={bookInfo.audio.length && `http://sanab.erbp.ir/public/files//${bookInfo.audio[0].title}`}
+                file={bookInfo.files.length && bookInfo.files[0]}
             />
         :
             <div>در حال بارگذاری ...</div>
