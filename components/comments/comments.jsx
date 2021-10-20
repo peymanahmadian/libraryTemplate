@@ -9,13 +9,16 @@ const Comments=(props)=>{
                 <div><textarea rows={4} className={"block text"} placeholder={"دیدگاه خود را در مورد این آثار بیان کنید..."}/></div>
             </div>
             <div>
-                <div className={styles.showComment}>
-                    <div className={styles.avatar}>
-                        <div>P</div>
-                        <div>پیمان احمدیان</div>
-                    </div>
-                    <div className={styles.bullet}>به نظرم کتابی لازم برای تمام مهندسین می باشد</div>
-                </div>
+                {
+                    props.comments.map(item=><div key={item.user} className={styles.showComment}>
+                        <div className={styles.avatar}>
+                            <div>{item.user.split("")[0]}</div>
+                            <div>{item.user}</div>
+                        </div>
+                        <div className={styles.bullet}>{item.comment}</div>
+                    </div>)
+                }
+
             </div>
         </div>
     )

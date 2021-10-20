@@ -13,9 +13,11 @@ const Books=(props)=>{
     const [translator,setTranslator]=useState(null);
     const [publisherBooks,setPublisherBooks]=useState(null);
     const [categoryBooks,setCategoryBooks]=useState(null);
+    const [commentList,setCommentList]=useState([]);
     useEffect(() => {
         debugger;
         if(query.param){
+            //load book
             service("get","books",{id:query.param}).then(data=>{
                 setBookInfo(data);
                 let cashAuthor=data.positions.find(item=>item.type===Positions.WRITER);
@@ -39,6 +41,13 @@ const Books=(props)=>{
                     let cashCategorySlider=cashCategory.map(item=>({name:item.name,image:`http://sanab.erbp.ir/public/files//${item.image.url}`,link:`/books/${item.id}`}))
                     setCategoryBooks(cashCategorySlider);
                 })
+            })
+            //load comments
+            debugger;
+            service("get","comments",{"book.id":query.param}).then(data=>{
+                debugger;
+                    let commentCash=data["hydra:member"].map(item=>({user:`${item.creator.firstName} ${item.creator.lastName}`,title:item.title,comment:item.body}));
+                    setCommentList(commentCash);
             })
         }
 
@@ -65,7 +74,7 @@ const Books=(props)=>{
             <div>در حال بارگذاری ...</div>
         }
 
-        <Comments/>
+        <Comments comments={commentList}/>
         <div style={{height:"270px",overflow:"hidden"}}>
             {publisherBooks?
                 publisherBooks.length>0 &&

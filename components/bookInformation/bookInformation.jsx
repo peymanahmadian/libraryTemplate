@@ -8,9 +8,9 @@ const BookInformation=(props)=>{
     const url=useUrl("/view")
     const [linkInfo,setLinkInfo]=useState(null);
     useEffect(() => {
-        let extension=props.file.title.split(".")[1];
+        let extension=props.file && props.file.title.split(".")[1];
         let name=props.name;
-        let file=props.file.title;
+        let file=props.file && props.file.title;
         setLinkInfo({extension,name,file});
     }, [props.file]);
 
@@ -33,17 +33,19 @@ const BookInformation=(props)=>{
         </div>
         <div className={styles.bookDownload}>
             <div>
-                <button onClick={()=>url(linkInfo)}  type={"button"} className={"btn block"}>مطالعه کتاب</button>
+                {
+                    linkInfo && (linkInfo.extension==="pdf" || linkInfo.extension==="epub") &&
+                    <button onClick={()=>url(linkInfo)}  type={"button"} className={"btn block"}>مطالعه کتاب</button>
+
+                }
             </div>
-            <div>
-                <button type={"button"} className={"btn block"}>دانلود صوت کتاب</button>
-            </div>
+
 
         </div>
 
     </div>
             {
-                props.audio &&
+                 props.audio.length>0 &&
                 <div className={styles.bookAudio}>
                     <audio controls src={props.audio}/>
                 </div>
