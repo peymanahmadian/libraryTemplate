@@ -7,7 +7,10 @@ const Description=(props)=>{
         <div className={`${styles.content} ${visible && styles.hover}`}>
                     {parse(props.children)}
         </div>
-        <div className={styles.footer}><button type={"button"} className={"btn"} onClick={()=>setVisible(!visible)}>{visible ? "مشاهده کمتر" : "مشاهده بیشتر"}</button></div>
+        {
+            props.children.length > 800 &&
+            <div className={styles.footer}><button type={"button"} className={"btn"} onClick={()=>setVisible(!visible)}>{visible ? "مشاهده کمتر" : "مشاهده بیشتر"}</button></div>
+        }
 
     </>)
 }
