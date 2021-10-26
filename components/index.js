@@ -14,3 +14,4 @@ export {default as Filter} from "./filter/filter";
 export {default as MultiSelect} from "./multiSelect/multiSelect";
 export {default as PDFViewer} from "./pdf/pdf";
 export {default as  Epub} from "./epub/epub";
+export {default as PublisherList} from "./publisherList/publisherList";
