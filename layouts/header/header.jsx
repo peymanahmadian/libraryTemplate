@@ -17,10 +17,10 @@ const Header=(props)=>{
             <div className={styles.menu}>
                 <Menu items={[
                 {href:"/",text:"صفحه اصلی"},
-                {href:"/categories/list?type=publishers",text:"انتشارات"},
-                {href:"/categories/list?type=journals",text:"نشریات"},
-                {href:"/books/list?book.type=book&page=1&pagination=true",text:"کتب"},
-                {href:"/books/list?book.type=magazine&page=1&pagination=true",text:"مجلات"},
+                {href:"/publishers/list",text:"انتشارات"},
+                // {href:"/publishers/list?type=journals",text:"نشریات"},
+                {href:"/books/list?bookType=book&page=1&pagination=true",text:"کتب"},
+                {href:"/books/list?bookType=magazine&page=1&pagination=true",text:"مجلات"},
                 ]}/>
             </div>
             <div className={styles.search}><Search /></div>
