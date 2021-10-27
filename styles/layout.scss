@@ -5,13 +5,13 @@ body{
     margin:0;
     padding: 0;
     *{
-
         font-family: "shabnam";
     }
 }
 .layout{
     max-width: $max_width;
     margin: 0 auto;
+    padding-top: 40px;
 }
 .row{
     display: flex;
@@ -49,5 +49,26 @@ body{
         padding: 8px 12px;
         color:white;
         border-radius: 25px;
+    }
+}
+.publisherDetails{
+    .content{
+        b{
+            padding: 4px 0 18px 0;
+            display: block;
+        }
+        .details{
+            padding-top: 8px;
+            font-size: 12px;
+            line-height: 20px;
+        }
+    }
+    .img{
+        height: 150px;
+        width: 150px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+
     }
 }
