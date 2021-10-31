@@ -1,6 +1,6 @@
 import {useState,useEffect} from "react";
 import {useRouter} from "next/router";
-import Image from "next/image";
+import {fileUrl} from "../../config.json";
 import {useService} from "../../hooks";
 import {BookSlider} from "../../components";
 const Publisher=(props)=>{
@@ -14,7 +14,7 @@ const Publisher=(props)=>{
             service("get","publishers",{id:query.param}).then(data=>{
                 setPublisherInfo(data);
                 service("get","books",{"publishers.name":data.name}).then(data=>{
-                    let booksCash=data["hydra:member"].map(item=>({name:item.name,image:`http://sanab.erbp.ir/public/files//${item.image.url}`,link:`/books/${item.id}`}));
+                    let booksCash=data["hydra:member"].map(item=>({name:item.name,image:`${fileUrl}${item.image.url}`,link:`/books/${item.id}`}));
                     setBookList(booksCash);
                 })
             })
@@ -26,7 +26,7 @@ const Publisher=(props)=>{
 
             <div className={"row"}>
                 <div className={"col m_20"}>
-                    <div className={"img"} style={{backgroundImage:`url(http://sanab.erbp.ir/public/files/${publisherInfo.picture && publisherInfo.picture.url})`}} alt={publisherInfo.name} />
+                    <div className={"img"} style={{backgroundImage:`url(${publisherInfo.picture && `${fileUrl}${publisherInfo.picture.url}`})`}} alt={publisherInfo.name} />
 
                 </div>
                 <div className={"col m_80 content"}>

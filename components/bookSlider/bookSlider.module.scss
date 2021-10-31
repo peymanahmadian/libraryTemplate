@@ -1,5 +1,7 @@
 @import "styles/global";
 .sliderContainer{
+  height: 295px;
+  overflow: hidden;
   max-width: $max_width;
   margin:0 auto;
   .title{

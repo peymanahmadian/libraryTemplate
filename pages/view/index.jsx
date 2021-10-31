@@ -1,6 +1,7 @@
 import dynamic from "next/dynamic";
 import {useRouter} from "next/router";
-import {Epub} from "../../components"
+import {Epub} from "../../components";
+import {fileUrl} from "./../../config.json";
 const PDFViewer=dynamic(()=>import("../../components/pdf/pdf"),{
     ssr:false
 });
@@ -13,9 +14,9 @@ const Index=()=>{
         <div className={"pageView"}>
         {
         (query && query.extension==="pdf")?
-            <PDFViewer url={`http://sanab.erbp.ir/public/files/${query.file}`}/>
+            <PDFViewer url={`${fileUrl}${query.file}`}/>
             :
-            <Epub url={`http://sanab.erbp.ir/public/files/${query.file}`}/>
+            <Epub url={`${fileUrl}${query.file}`}/>
         }
         <div className={"title"}>{query.name}</div>
 

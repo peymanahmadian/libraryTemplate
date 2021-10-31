@@ -4,6 +4,7 @@ import {useRouter} from "next/router";
 import {useService} from "../../hooks"
 import {Positions} from "../../models/eums";
 import moment from "moment-jalaali";
+import {fileUrl} from "./../../config.json";
 const Books=(props)=>{
     const router=useRouter();
     const {query}=router;
@@ -32,13 +33,13 @@ const Books=(props)=>{
                 service("get","books",{"publishers.name":publisherName},false).then(data=>{
                     debugger;
                     let cashPublisher=data["hydra:member"].filter(item=>item.id!==query.param);
-                    let cashPublisherSlider=cashPublisher.map(item=>({name:item.name,image:`http://sanab.erbp.ir/public/files//${item.image.url}`,link:`/books/${item.id}`}))
+                    let cashPublisherSlider=cashPublisher.map(item=>({name:item.name,image:`${fileUrl}${item.image.url}`,link:`/books/${item.id}`}))
                     setPublisherBooks(cashPublisherSlider);
                 })
                 let categoryName=data.categories[0].title;
                 service("get","books",{"categories.title":categoryName},false).then(data=>{
                     let cashCategory=data["hydra:member"].filter(item=>item.id!==query.param);
-                    let cashCategorySlider=cashCategory.map(item=>({name:item.name,image:`http://sanab.erbp.ir/public/files//${item.image.url}`,link:`/books/${item.id}`}))
+                    let cashCategorySlider=cashCategory.map(item=>({name:item.name,image:`${fileUrl}${item.image.url}`,link:`/books/${item.id}`}))
                     setCategoryBooks(cashCategorySlider);
                 })
             })
@@ -57,7 +58,7 @@ const Books=(props)=>{
         {bookInfo ?
             <BookInformation
                 name={bookInfo.name}
-                image={`http://sanab.erbp.ir/public/files//${bookInfo.image.url}`}
+                image={`${fileUrl}/${bookInfo.image.url}`}
                 author={author}
                 translator={translator}
                 nariator={null}
@@ -99,42 +100,6 @@ const Books=(props)=>{
             <div>در حال بارگذاری ...</div>
         }
     </div>
-
-        {/*<BookSlider*/}
-        {/*    title={"جدیدترین کتاب ها"}*/}
-        {/*    items={[*/}
-        {/*        {*/}
-        {/*            name:"مغازه خودکشی",*/}
-        {/*            image:"http://sanab.erbp.ir/public/files/60fd2fcb544e1646123945.jpg",*/}
-        {/*            link:"/"*/}
-        {/*        },*/}
-        {/*        {*/}
-        {/*            name:"مغازه خودکشی",*/}
-        {/*            image:"http://sanab.erbp.ir/public/files/60fd2fcb544e1646123945.jpg",*/}
-        {/*            link:"/"*/}
-        {/*        },*/}
-        {/*        {*/}
-        {/*            name:"مغازه خودکشی",*/}
-        {/*            image:"http://sanab.erbp.ir/public/files/60fd2fcb544e1646123945.jpg",*/}
-        {/*            link:"/"*/}
-        {/*        },*/}
-        {/*        {*/}
-        {/*            name:"مغازه خودکشی",*/}
-        {/*            image:"http://sanab.erbp.ir/public/files/60fd2fcb544e1646123945.jpg",*/}
-        {/*            link:"/"*/}
-        {/*        },*/}
-        {/*        {*/}
-        {/*            name:"مغازه خودکشی",*/}
-        {/*            image:"http://sanab.erbp.ir/public/files/60fd2fcb544e1646123945.jpg",*/}
-        {/*            link:"/"*/}
-        {/*        },*/}
-        {/*        {*/}
-        {/*            name:"مغازه خودکشی",*/}
-        {/*            image:"http://sanab.erbp.ir/public/files/60fd2fcb544e1646123945.jpg",*/}
-        {/*            link:"/"*/}
-        {/*        },*/}
-        {/*    ]}*/}
-        {/*/>*/}
     </div>)
 }
 export default Books;

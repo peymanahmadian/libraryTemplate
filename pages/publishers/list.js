@@ -3,6 +3,7 @@ import {useRouter} from "next/router";
 import {PublisherList,Pagination,Filter} from "../../components";
 import {useService,useUrl} from "../../hooks";
 import querystring from "query-string";
+import {fileUrl} from "../../config.json";
 const List=(param)=>{
     const router=useRouter();
     const service=useService();
@@ -21,7 +22,7 @@ const List=(param)=>{
     const loadData=(query)=>{
         service("get","publishers",query).then(data=>{
             debugger;
-            let cashBookList=data["hydra:member"].map(item=>({name:item.name,image:`http://sanab.erbp.ir/public/files/${item.picture.url}`,link:`/publishers/${item.id}`}))
+            let cashBookList=data["hydra:member"].map(item=>({name:item.name,image:`${fileUrl}${item.picture.url}`,link:`/publishers/${item.id}`}))
             setList(cashBookList);
             setCountData(data["hydra:totalItems"]);
         });

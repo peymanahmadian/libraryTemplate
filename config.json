@@ -1,3 +1,4 @@
 {
-  "apiUrl": "http://sanab.erbp.ir/api/"
+  "apiUrl": "http://api.sanab.ofogh.net/api/",
+  "fileUrl": "http://api.sanab.ofogh.net/files/"
 }

@@ -13,10 +13,6 @@ export default function Epub(props) {
     }
     const ownStyles={
         ...ReactReaderStyles,
-        arrow:{
-            ...ReactReaderStyles.arrow,
-            color:'red'
-        }
     }
     useEffect(() => {
         if (renditionRef.current) {
@@ -25,13 +21,15 @@ export default function Epub(props) {
     }, [size])
     return (
         <div>
-            <div>
+            <div className={"font_size"}>
+                <div>اندازه متن</div>
                 <input type={"button"} value={"+"} onClick={() => changeSize(Math.min(130, size + 10))}/>
-                <input type={"button"} value={"-"}  onClick={() => changeSize(Math.max(80, size - 10))}/></div>
+                <input type={"button"} value={"--"}  onClick={() => changeSize(Math.max(80, size - 10))}/></div>
             <div style={{ position: "relative", height: "660px",direction:"ltr" }}>
                 <ReactReader
                     showToc={true}
                     url={props.url}
+                    //styles={ownStyles}
                     title={props.title}
                     location={location}
                     locationChanged={locationChanged}

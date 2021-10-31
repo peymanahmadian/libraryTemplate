@@ -3,7 +3,7 @@ const withTM = require("next-transpile-modules")(["react-reader", "epubjs"]);
 module.exports = withTM({
   reactStrictMode: true,
   images: {
-    domains: ['sanab.erbp.ir']
+    domains: ['sanab.erbp.ir','api.sanab.ofogh.net']
   },
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
