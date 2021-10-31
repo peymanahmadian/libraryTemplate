@@ -72,3 +72,28 @@ body{
 
     }
 }
+.font_size{
+    background-color: $color_gray_light;
+    padding: 4px;
+    &>div{
+        line-height: 28px;
+        padding: 0 5px;
+
+    }
+    display: flex;
+    position: absolute;
+    right: 20px;
+    top:24px;
+    z-index: 999;
+    font-size: 14px;
+
+    input{
+        border:0;
+        height: 30px;
+        width: 30px;
+        margin:0 2px;
+        font-size: 16px;
+        background-color: $color_green;
+        color:white;
+    }
+}

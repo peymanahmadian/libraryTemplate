@@ -2,7 +2,7 @@ import Head from 'next/head';
 import {BookSlider, HeadSlider,Banner} from "../components";
 import {useEffect, useState} from "react";
 import {useService,useUrl} from "./../hooks";
-import {MultiSelect} from "../components"
+import {fileUrl} from "./../config.json";
 export default function Home() {
     const service=useService();
     const url=useUrl();
@@ -12,15 +12,15 @@ export default function Home() {
     const [bannerList,setBannerList]=useState([]);
     useEffect(()=>{
         service("get","books",{page:1,pagination:true,"categories.title":"فرهنگی","_order[createdAt]":"asc"}).then(data=>{
-            let cash=data["hydra:member"].map(item=>({name:item.name,image:`http://sanab.erbp.ir/public/files/${item.image.url}`,link:`/books/${item.id}`}));
+            let cash=data["hydra:member"].map(item=>({name:item.name,image:`${fileUrl}${item.image.url}`,link:`/books/${item.id}`}));
             setCulturalSlider(cash);
         });
         service("get","books",{page:1,pagination:true,"categories.title":"هنری","_order[createdAt]":"asc"}).then(data=>{
-            let cash=data["hydra:member"].map(item=>({name:item.name,image:`http://sanab.erbp.ir/public/files/${item.image.url}`,link:`/books/${item.id}`}));
+            let cash=data["hydra:member"].map(item=>({name:item.name,image:`${fileUrl}${item.image.url}`,link:`/books/${item.id}`}));
             setArtisticSlider(cash);
         });
         service("get","books",{page:1,pagination:true,"categories.title":"طنز","_order[createdAt]":"asc"}).then(data=>{
-            let cash=data["hydra:member"].map(item=>({name:item.name,image:`http://sanab.erbp.ir/public/files/${item.image.url}`,link:`/books/${item.id}`}));
+            let cash=data["hydra:member"].map(item=>({name:item.name,image:`${fileUrl}${item.image.url}`,link:`/books/${item.id}`}));
             setHumorousSlider(cash);
         });
         service("get","banners",{}).then(data=>{
